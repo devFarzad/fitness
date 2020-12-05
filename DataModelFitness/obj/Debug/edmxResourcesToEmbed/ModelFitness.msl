@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fitnessModelStoreContainer" CdmEntityContainer="fitnessEntities">
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="fitnessModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="role_Status" ColumnName="role_Status" />
+          <ScalarProperty Name="role_Description" ColumnName="role_Description" />
+          <ScalarProperty Name="role_Name" ColumnName="role_Name" />
+          <ScalarProperty Name="PK_role_Id" ColumnName="PK_role_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_Component">
+      <EntityTypeMapping TypeName="fitnessModel.system_Component">
+        <MappingFragment StoreEntitySet="system_Component">
+          <ScalarProperty Name="system_Component_Part_Level" ColumnName="system_Component_Part_Level" />
+          <ScalarProperty Name="system_ComponentPart_State" ColumnName="system_ComponentPart_State" />
+          <ScalarProperty Name="system_Component_Update_Date" ColumnName="system_Component_Update_Date" />
+          <ScalarProperty Name="system_Component_Date" ColumnName="system_Component_Date" />
+          <ScalarProperty Name="system_Component_Description" ColumnName="system_Component_Description" />
+          <ScalarProperty Name="system_Component_Name" ColumnName="system_Component_Name" />
+          <ScalarProperty Name="system_Component_Id" ColumnName="system_Component_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Auth">
+      <EntityTypeMapping TypeName="fitnessModel.User_Auth">
+        <MappingFragment StoreEntitySet="User_Auth">
+          <ScalarProperty Name="FK_user_Auth_role_Id" ColumnName="FK_user_Auth_role_Id" />
+          <ScalarProperty Name="user_Auth_CreateUserTime" ColumnName="user_Auth_CreateUserTime" />
+          <ScalarProperty Name="user_Auth_Status" ColumnName="user_Auth_Status" />
+          <ScalarProperty Name="user_Auth_PasswordHin" ColumnName="user_Auth_PasswordHin" />
+          <ScalarProperty Name="user_Auth_Password" ColumnName="user_Auth_Password" />
+          <ScalarProperty Name="user_Auth_UserName" ColumnName="user_Auth_UserName" />
+          <ScalarProperty Name="PK_FK_user_Auth_Id" ColumnName="PK_FK_user_Auth_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Role_Access">
+      <EntityTypeMapping TypeName="fitnessModel.User_Role_Access">
+        <MappingFragment StoreEntitySet="User_Role_Access">
+          <ScalarProperty Name="FK_system_Part_Id" ColumnName="FK_system_Part_Id" />
+          <ScalarProperty Name="FK_user_Role_Id" ColumnName="FK_user_Role_Id" />
+          <ScalarProperty Name="PK_user_Role_Access_Id" ColumnName="PK_user_Role_Access_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="fitnessModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="users_Description" ColumnName="users_Description" />
+          <ScalarProperty Name="users_Status" ColumnName="users_Status" />
+          <ScalarProperty Name="users_CreateUserTime" ColumnName="users_CreateUserTime" />
+          <ScalarProperty Name="users_Address" ColumnName="users_Address" />
+          <ScalarProperty Name="users_PhoneNumber" ColumnName="users_PhoneNumber" />
+          <ScalarProperty Name="users_LastName" ColumnName="users_LastName" />
+          <ScalarProperty Name="users_FirstName" ColumnName="users_FirstName" />
+          <ScalarProperty Name="PK_users_Id" ColumnName="PK_users_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersInfoFitnesses">
+      <EntityTypeMapping TypeName="fitnessModel.UsersInfoFitness">
+        <MappingFragment StoreEntitySet="UsersInfoFitness">
+          <ScalarProperty Name="usersInfoFitness_exerciesLevelStr" ColumnName="usersInfoFitness_exerciesLevelStr" />
+          <ScalarProperty Name="usersInfoFitness_exerciesLevel" ColumnName="usersInfoFitness_exerciesLevel" />
+          <ScalarProperty Name="usersInfoFitness_CreateUserTime" ColumnName="usersInfoFitness_CreateUserTime" />
+          <ScalarProperty Name="usersInfoFitness_BMR" ColumnName="usersInfoFitness_BMR" />
+          <ScalarProperty Name="usersInfoFitness_BMI" ColumnName="usersInfoFitness_BMI" />
+          <ScalarProperty Name="usersInfoFitness_MonthlyAmount" ColumnName="usersInfoFitness_MonthlyAmount" />
+          <ScalarProperty Name="usersInfoFitness_Age" ColumnName="usersInfoFitness_Age" />
+          <ScalarProperty Name="usersInfoFitness_BirthdayDate" ColumnName="usersInfoFitness_BirthdayDate" />
+          <ScalarProperty Name="usersInfoFitness_EndDate" ColumnName="usersInfoFitness_EndDate" />
+          <ScalarProperty Name="usersInfoFitness_StartDate" ColumnName="usersInfoFitness_StartDate" />
+          <ScalarProperty Name="usersInfoFitness_WaistMeasure" ColumnName="usersInfoFitness_WaistMeasure" />
+          <ScalarProperty Name="usersInfoFitness_Weight" ColumnName="usersInfoFitness_Weight" />
+          <ScalarProperty Name="usersInfoFitness_Height" ColumnName="usersInfoFitness_Height" />
+          <ScalarProperty Name="PK_FK_usersInfoFitness_Id" ColumnName="PK_FK_usersInfoFitness_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_members">
+      <EntityTypeMapping TypeName="fitnessModel.VW_members">
+        <MappingFragment StoreEntitySet="VW_members">
+          <ScalarProperty Name="usersInfoFitness_exerciesLevelStr" ColumnName="usersInfoFitness_exerciesLevelStr" />
+          <ScalarProperty Name="usersInfoFitness_exerciesLevel" ColumnName="usersInfoFitness_exerciesLevel" />
+          <ScalarProperty Name="users_FirstName" ColumnName="users_FirstName" />
+          <ScalarProperty Name="users_LastName" ColumnName="users_LastName" />
+          <ScalarProperty Name="usersInfoFitness_CreateUserTime" ColumnName="usersInfoFitness_CreateUserTime" />
+          <ScalarProperty Name="usersInfoFitness_BMR" ColumnName="usersInfoFitness_BMR" />
+          <ScalarProperty Name="usersInfoFitness_BMI" ColumnName="usersInfoFitness_BMI" />
+          <ScalarProperty Name="usersInfoFitness_MonthlyAmount" ColumnName="usersInfoFitness_MonthlyAmount" />
+          <ScalarProperty Name="usersInfoFitness_Age" ColumnName="usersInfoFitness_Age" />
+          <ScalarProperty Name="usersInfoFitness_BirthdayDate" ColumnName="usersInfoFitness_BirthdayDate" />
+          <ScalarProperty Name="usersInfoFitness_EndDate" ColumnName="usersInfoFitness_EndDate" />
+          <ScalarProperty Name="usersInfoFitness_StartDate" ColumnName="usersInfoFitness_StartDate" />
+          <ScalarProperty Name="usersInfoFitness_WaistMeasure" ColumnName="usersInfoFitness_WaistMeasure" />
+          <ScalarProperty Name="usersInfoFitness_Weight" ColumnName="usersInfoFitness_Weight" />
+          <ScalarProperty Name="usersInfoFitness_Height" ColumnName="usersInfoFitness_Height" />
+          <ScalarProperty Name="users_Description" ColumnName="users_Description" />
+          <ScalarProperty Name="users_Status" ColumnName="users_Status" />
+          <ScalarProperty Name="users_CreateUserTime" ColumnName="users_CreateUserTime" />
+          <ScalarProperty Name="users_Address" ColumnName="users_Address" />
+          <ScalarProperty Name="users_PhoneNumber" ColumnName="users_PhoneNumber" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PK_users_Id" ColumnName="PK_users_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="addMember" FunctionName="fitnessModel.Store.addMember" />
+    <FunctionImportMapping FunctionImportName="AddmemberInfo" FunctionName="fitnessModel.Store.AddmemberInfo" />
+    <EntitySetMapping Name="vw_AuthUsers">
+      <EntityTypeMapping TypeName="fitnessModel.vw_AuthUsers">
+        <MappingFragment StoreEntitySet="vw_AuthUsers">
+          <ScalarProperty Name="users_LastName" ColumnName="users_LastName" />
+          <ScalarProperty Name="users_FirstName" ColumnName="users_FirstName" />
+          <ScalarProperty Name="FK_user_Auth_role_Id" ColumnName="FK_user_Auth_role_Id" />
+          <ScalarProperty Name="user_Auth_CreateUserTime" ColumnName="user_Auth_CreateUserTime" />
+          <ScalarProperty Name="user_Auth_Status" ColumnName="user_Auth_Status" />
+          <ScalarProperty Name="user_Auth_PasswordHin" ColumnName="user_Auth_PasswordHin" />
+          <ScalarProperty Name="user_Auth_Password" ColumnName="user_Auth_Password" />
+          <ScalarProperty Name="user_Auth_UserName" ColumnName="user_Auth_UserName" />
+          <ScalarProperty Name="PK_users_Id" ColumnName="PK_users_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteFromMemberInfo" FunctionName="fitnessModel.Store.DeleteFromMemberInfo" />
+    <FunctionImportMapping FunctionImportName="DeleteFromUsers" FunctionName="fitnessModel.Store.DeleteFromUsers" />
+    <FunctionImportMapping FunctionImportName="updateMember" FunctionName="fitnessModel.Store.updateMember" />
+    <FunctionImportMapping FunctionImportName="updateMemberInfo" FunctionName="fitnessModel.Store.updateMemberInfo" />
+    <FunctionImportMapping FunctionImportName="disableUserMember" FunctionName="fitnessModel.Store.disableUserMember" />
+  </EntityContainerMapping>
+</Mapping>

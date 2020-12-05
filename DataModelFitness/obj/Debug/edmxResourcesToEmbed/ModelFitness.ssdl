@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fitnessModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="PK_role_Id" />
+    </Key>
+    <Property Name="PK_role_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="role_Description" Type="nvarchar" MaxLength="128" />
+    <Property Name="role_Status" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="system_Component">
+    <Key>
+      <PropertyRef Name="system_Component_Id" />
+    </Key>
+    <Property Name="system_Component_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="system_Component_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="system_Component_Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="system_Component_Date" Type="nvarchar" MaxLength="40" />
+    <Property Name="system_Component_Update_Date" Type="nvarchar" MaxLength="40" />
+    <Property Name="system_ComponentPart_State" Type="tinyint" Nullable="false" />
+    <Property Name="system_Component_Part_Level" Type="int" />
+  </EntityType>
+  <EntityType Name="User_Auth">
+    <Key>
+      <PropertyRef Name="PK_FK_user_Auth_Id" />
+    </Key>
+    <Property Name="PK_FK_user_Auth_Id" Type="int" Nullable="false" />
+    <Property Name="user_Auth_UserName" Type="nvarchar" MaxLength="127" />
+    <Property Name="user_Auth_Password" Type="nvarchar" MaxLength="128" />
+    <Property Name="user_Auth_PasswordHin" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_Auth_Status" Type="tinyint" />
+    <Property Name="user_Auth_CreateUserTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="FK_user_Auth_role_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="User_Role_Access">
+    <Key>
+      <PropertyRef Name="PK_user_Role_Access_Id" />
+    </Key>
+    <Property Name="PK_user_Role_Access_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_user_Role_Id" Type="int" />
+    <Property Name="FK_system_Part_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="PK_users_Id" />
+    </Key>
+    <Property Name="PK_users_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="users_FirstName" Type="nvarchar" MaxLength="127" />
+    <Property Name="users_LastName" Type="nvarchar" MaxLength="127" />
+    <Property Name="users_PhoneNumber" Type="nvarchar" MaxLength="127" />
+    <Property Name="users_Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="users_CreateUserTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="users_Status" Type="tinyint" />
+    <Property Name="users_Description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="UsersInfoFitness">
+    <Key>
+      <PropertyRef Name="PK_FK_usersInfoFitness_Id" />
+    </Key>
+    <Property Name="PK_FK_usersInfoFitness_Id" Type="int" Nullable="false" />
+    <Property Name="usersInfoFitness_Height" Type="float" />
+    <Property Name="usersInfoFitness_Weight" Type="float" />
+    <Property Name="usersInfoFitness_WaistMeasure" Type="float" />
+    <Property Name="usersInfoFitness_StartDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="usersInfoFitness_EndDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="usersInfoFitness_BirthdayDate" Type="nvarchar" MaxLength="40" />
+    <Property Name="usersInfoFitness_Age" Type="int" />
+    <Property Name="usersInfoFitness_MonthlyAmount" Type="money" />
+    <Property Name="usersInfoFitness_BMI" Type="float" />
+    <Property Name="usersInfoFitness_BMR" Type="float" />
+    <Property Name="usersInfoFitness_CreateUserTime" Type="nvarchar" MaxLength="40" />
+    <Property Name="usersInfoFitness_exerciesLevel" Type="tinyint" />
+    <Property Name="usersInfoFitness_exerciesLevelStr" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fitness.dbo.vw_AuthUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_AuthUsers">
+    <Key>
+      <PropertyRef Name="PK_users_Id" />
+    </Key>
+    <Property Name="PK_users_Id" Type="int" Nullable="false" />
+    <Property Name="user_Auth_UserName" Type="nvarchar" MaxLength="127" />
+    <Property Name="user_Auth_Password" Type="nvarchar" MaxLength="128" />
+    <Property Name="user_Auth_PasswordHin" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_Auth_Status" Type="tinyint" />
+    <Property Name="user_Auth_CreateUserTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="FK_user_Auth_role_Id" Type="int" />
+    <Property Name="users_FirstName" Type="nvarchar" MaxLength="127" />
+    <Property Name="users_LastName" Type="nvarchar" MaxLength="127" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fitness.dbo.VW_members' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_members">
+    <Key>
+      <PropertyRef Name="PK_users_Id" />
+    </Key>
+    <Property Name="PK_users_Id" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+    <Property Name="users_Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="users_CreateUserTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="users_Status" Type="tinyint" />
+    <Property Name="users_Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="usersInfoFitness_Height" Type="float" />
+    <Property Name="usersInfoFitness_Weight" Type="float" />
+    <Property Name="usersInfoFitness_WaistMeasure" Type="float" />
+    <Property Name="usersInfoFitness_StartDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="usersInfoFitness_EndDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="usersInfoFitness_BirthdayDate" Type="nvarchar" MaxLength="40" />
+    <Property Name="usersInfoFitness_Age" Type="int" />
+    <Property Name="usersInfoFitness_MonthlyAmount" Type="money" />
+    <Property Name="usersInfoFitness_BMI" Type="float" />
+    <Property Name="usersInfoFitness_BMR" Type="float" />
+    <Property Name="usersInfoFitness_CreateUserTime" Type="nvarchar" MaxLength="40" />
+    <Property Name="users_LastName" Type="nvarchar" MaxLength="127" />
+    <Property Name="users_PhoneNumber" Type="nvarchar" MaxLength="127" />
+    <Property Name="users_FirstName" Type="nvarchar" MaxLength="127" />
+    <Property Name="usersInfoFitness_exerciesLevel" Type="tinyint" />
+    <Property Name="usersInfoFitness_exerciesLevelStr" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_system_Part_Id">
+    <End Role="system_Component" Type="Self.system_Component" Multiplicity="0..1" />
+    <End Role="User_Role_Access" Type="Self.User_Role_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="system_Component">
+        <PropertyRef Name="system_Component_Id" />
+      </Principal>
+      <Dependent Role="User_Role_Access">
+        <PropertyRef Name="FK_system_Part_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_Auth_role_Id">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="User_Auth" Type="Self.User_Auth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="PK_role_Id" />
+      </Principal>
+      <Dependent Role="User_Auth">
+        <PropertyRef Name="FK_user_Auth_role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_Role_Id">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="User_Role_Access" Type="Self.User_Role_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="PK_role_Id" />
+      </Principal>
+      <Dependent Role="User_Role_Access">
+        <PropertyRef Name="FK_user_Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_FK_user_Auth_Id">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="User_Auth" Type="Self.User_Auth" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="PK_users_Id" />
+      </Principal>
+      <Dependent Role="User_Auth">
+        <PropertyRef Name="PK_FK_user_Auth_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_FK_usersInfoFitness_Id">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UsersInfoFitness" Type="Self.UsersInfoFitness" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="PK_users_Id" />
+      </Principal>
+      <Dependent Role="UsersInfoFitness">
+        <PropertyRef Name="PK_FK_usersInfoFitness_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="addMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreateDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="tinyint" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddmemberInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="Height" Type="float" Mode="In" />
+    <Parameter Name="Weight" Type="float" Mode="In" />
+    <Parameter Name="WaistMeasure" Type="float" Mode="In" />
+    <Parameter Name="StartDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="EndDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="Birthday" Type="nvarchar" Mode="In" />
+    <Parameter Name="Age" Type="int" Mode="In" />
+    <Parameter Name="MonthlyAmount" Type="money" Mode="In" />
+    <Parameter Name="BMI" Type="float" Mode="In" />
+    <Parameter Name="BMR" Type="float" Mode="In" />
+    <Parameter Name="CreateDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="exerciesLevel" Type="int" Mode="In" />
+    <Parameter Name="exerciesLevelStr" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteFromMemberInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteFromUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="disableUserMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="updateMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="FName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="tinyint" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="updateMemberInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="Height" Type="float" Mode="In" />
+    <Parameter Name="Weight" Type="float" Mode="In" />
+    <Parameter Name="WaistMeasure" Type="float" Mode="In" />
+    <Parameter Name="StartDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="EndDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="Birthday" Type="nvarchar" Mode="In" />
+    <Parameter Name="Age" Type="int" Mode="In" />
+    <Parameter Name="MonthlyAmount" Type="money" Mode="In" />
+    <Parameter Name="BMI" Type="float" Mode="In" />
+    <Parameter Name="BMR" Type="float" Mode="In" />
+    <Parameter Name="exerciesLevel" Type="int" Mode="In" />
+    <Parameter Name="exerciesLevelStr" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="fitnessModelStoreContainer">
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="system_Component" EntityType="Self.system_Component" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Auth" EntityType="Self.User_Auth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Role_Access" EntityType="Self.User_Role_Access" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersInfoFitness" EntityType="Self.UsersInfoFitness" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_AuthUsers" EntityType="Self.vw_AuthUsers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_AuthUsers].[PK_users_Id] AS [PK_users_Id], 
+    [vw_AuthUsers].[user_Auth_UserName] AS [user_Auth_UserName], 
+    [vw_AuthUsers].[user_Auth_Password] AS [user_Auth_Password], 
+    [vw_AuthUsers].[user_Auth_PasswordHin] AS [user_Auth_PasswordHin], 
+    [vw_AuthUsers].[user_Auth_Status] AS [user_Auth_Status], 
+    [vw_AuthUsers].[user_Auth_CreateUserTime] AS [user_Auth_CreateUserTime], 
+    [vw_AuthUsers].[FK_user_Auth_role_Id] AS [FK_user_Auth_role_Id], 
+    [vw_AuthUsers].[users_FirstName] AS [users_FirstName], 
+    [vw_AuthUsers].[users_LastName] AS [users_LastName]
+    FROM [dbo].[vw_AuthUsers] AS [vw_AuthUsers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_members" EntityType="Self.VW_members" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_members].[PK_users_Id] AS [PK_users_Id], 
+    [VW_members].[FullName] AS [FullName], 
+    [VW_members].[users_Address] AS [users_Address], 
+    [VW_members].[users_CreateUserTime] AS [users_CreateUserTime], 
+    [VW_members].[users_Status] AS [users_Status], 
+    [VW_members].[users_Description] AS [users_Description], 
+    [VW_members].[usersInfoFitness_Height] AS [usersInfoFitness_Height], 
+    [VW_members].[usersInfoFitness_Weight] AS [usersInfoFitness_Weight], 
+    [VW_members].[usersInfoFitness_WaistMeasure] AS [usersInfoFitness_WaistMeasure], 
+    [VW_members].[usersInfoFitness_StartDate] AS [usersInfoFitness_StartDate], 
+    [VW_members].[usersInfoFitness_EndDate] AS [usersInfoFitness_EndDate], 
+    [VW_members].[usersInfoFitness_BirthdayDate] AS [usersInfoFitness_BirthdayDate], 
+    [VW_members].[usersInfoFitness_Age] AS [usersInfoFitness_Age], 
+    [VW_members].[usersInfoFitness_MonthlyAmount] AS [usersInfoFitness_MonthlyAmount], 
+    [VW_members].[usersInfoFitness_BMI] AS [usersInfoFitness_BMI], 
+    [VW_members].[usersInfoFitness_BMR] AS [usersInfoFitness_BMR], 
+    [VW_members].[usersInfoFitness_CreateUserTime] AS [usersInfoFitness_CreateUserTime], 
+    [VW_members].[users_LastName] AS [users_LastName], 
+    [VW_members].[users_PhoneNumber] AS [users_PhoneNumber], 
+    [VW_members].[users_FirstName] AS [users_FirstName], 
+    [VW_members].[usersInfoFitness_exerciesLevel] AS [usersInfoFitness_exerciesLevel], 
+    [VW_members].[usersInfoFitness_exerciesLevelStr] AS [usersInfoFitness_exerciesLevelStr]
+    FROM [dbo].[VW_members] AS [VW_members]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_system_Part_Id" Association="Self.FK_system_Part_Id">
+      <End Role="system_Component" EntitySet="system_Component" />
+      <End Role="User_Role_Access" EntitySet="User_Role_Access" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_Auth_role_Id" Association="Self.FK_user_Auth_role_Id">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="User_Auth" EntitySet="User_Auth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_Role_Id" Association="Self.FK_user_Role_Id">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="User_Role_Access" EntitySet="User_Role_Access" />
+    </AssociationSet>
+    <AssociationSet Name="PK_FK_user_Auth_Id" Association="Self.PK_FK_user_Auth_Id">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Auth" EntitySet="User_Auth" />
+    </AssociationSet>
+    <AssociationSet Name="PK_FK_usersInfoFitness_Id" Association="Self.PK_FK_usersInfoFitness_Id">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersInfoFitness" EntitySet="UsersInfoFitness" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

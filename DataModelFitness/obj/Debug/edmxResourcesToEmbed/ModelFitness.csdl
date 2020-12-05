@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fitnessModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="fitnessEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Roles" EntityType="fitnessModel.Role" />
+    <EntitySet Name="system_Component" EntityType="fitnessModel.system_Component" />
+    <EntitySet Name="User_Auth" EntityType="fitnessModel.User_Auth" />
+    <EntitySet Name="User_Role_Access" EntityType="fitnessModel.User_Role_Access" />
+    <EntitySet Name="Users" EntityType="fitnessModel.User" />
+    <EntitySet Name="UsersInfoFitnesses" EntityType="fitnessModel.UsersInfoFitness" />
+    <EntitySet Name="VW_members" EntityType="fitnessModel.VW_members" />
+    <AssociationSet Name="FK_user_Auth_role_Id" Association="fitnessModel.FK_user_Auth_role_Id">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User_Auth" EntitySet="User_Auth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_Role_Id" Association="fitnessModel.FK_user_Role_Id">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User_Role_Access" EntitySet="User_Role_Access" />
+    </AssociationSet>
+    <AssociationSet Name="FK_system_Part_Id" Association="fitnessModel.FK_system_Part_Id">
+      <End Role="system_Component" EntitySet="system_Component" />
+      <End Role="User_Role_Access" EntitySet="User_Role_Access" />
+    </AssociationSet>
+    <AssociationSet Name="PK_FK_user_Auth_Id" Association="fitnessModel.PK_FK_user_Auth_Id">
+      <End Role="User" EntitySet="Users" />
+      <End Role="User_Auth" EntitySet="User_Auth" />
+    </AssociationSet>
+    <AssociationSet Name="PK_FK_usersInfoFitness_Id" Association="fitnessModel.PK_FK_usersInfoFitness_Id">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UsersInfoFitness" EntitySet="UsersInfoFitnesses" />
+    </AssociationSet>
+    <FunctionImport Name="addMember">
+      <Parameter Name="FName" Mode="In" Type="String" />
+      <Parameter Name="LName" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="CreateDate" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Byte" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddmemberInfo">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="Height" Mode="In" Type="Double" />
+      <Parameter Name="Weight" Mode="In" Type="Double" />
+      <Parameter Name="WaistMeasure" Mode="In" Type="Double" />
+      <Parameter Name="StartDate" Mode="In" Type="String" />
+      <Parameter Name="EndDate" Mode="In" Type="String" />
+      <Parameter Name="Birthday" Mode="In" Type="String" />
+      <Parameter Name="Age" Mode="In" Type="Int32" />
+      <Parameter Name="MonthlyAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="BMI" Mode="In" Type="Double" />
+      <Parameter Name="BMR" Mode="In" Type="Double" />
+      <Parameter Name="CreateDate" Mode="In" Type="String" />
+      <Parameter Name="exerciesLevel" Mode="In" Type="Int32" />
+      <Parameter Name="exerciesLevelStr" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="vw_AuthUsers" EntityType="fitnessModel.vw_AuthUsers" />
+    <FunctionImport Name="DeleteFromMemberInfo">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteFromUsers">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="updateMember">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="FName" Mode="In" Type="String" />
+      <Parameter Name="LName" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Byte" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="updateMemberInfo">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="Height" Mode="In" Type="Double" />
+      <Parameter Name="Weight" Mode="In" Type="Double" />
+      <Parameter Name="WaistMeasure" Mode="In" Type="Double" />
+      <Parameter Name="StartDate" Mode="In" Type="String" />
+      <Parameter Name="EndDate" Mode="In" Type="String" />
+      <Parameter Name="Birthday" Mode="In" Type="String" />
+      <Parameter Name="Age" Mode="In" Type="Int32" />
+      <Parameter Name="MonthlyAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="BMI" Mode="In" Type="Double" />
+      <Parameter Name="BMR" Mode="In" Type="Double" />
+      <Parameter Name="exerciesLevel" Mode="In" Type="Int32" />
+      <Parameter Name="exerciesLevelStr" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="disableUserMember">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Byte" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="PK_role_Id" />
+    </Key>
+    <Property Name="PK_role_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="role_Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="role_Status" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="User_Auth" Relationship="fitnessModel.FK_user_Auth_role_Id" FromRole="Role" ToRole="User_Auth" />
+    <NavigationProperty Name="User_Role_Access" Relationship="fitnessModel.FK_user_Role_Id" FromRole="Role" ToRole="User_Role_Access" />
+  </EntityType>
+  <EntityType Name="system_Component">
+    <Key>
+      <PropertyRef Name="system_Component_Id" />
+    </Key>
+    <Property Name="system_Component_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="system_Component_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="system_Component_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="system_Component_Date" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="system_Component_Update_Date" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="system_ComponentPart_State" Type="Byte" Nullable="false" />
+    <Property Name="system_Component_Part_Level" Type="Int32" />
+    <NavigationProperty Name="User_Role_Access" Relationship="fitnessModel.FK_system_Part_Id" FromRole="system_Component" ToRole="User_Role_Access" />
+  </EntityType>
+  <EntityType Name="User_Auth">
+    <Key>
+      <PropertyRef Name="PK_FK_user_Auth_Id" />
+    </Key>
+    <Property Name="PK_FK_user_Auth_Id" Type="Int32" Nullable="false" />
+    <Property Name="user_Auth_UserName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="user_Auth_Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="user_Auth_PasswordHin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_Auth_Status" Type="Byte" />
+    <Property Name="user_Auth_CreateUserTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FK_user_Auth_role_Id" Type="Int32" />
+    <NavigationProperty Name="Role" Relationship="fitnessModel.FK_user_Auth_role_Id" FromRole="User_Auth" ToRole="Role" />
+    <NavigationProperty Name="User" Relationship="fitnessModel.PK_FK_user_Auth_Id" FromRole="User_Auth" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User_Role_Access">
+    <Key>
+      <PropertyRef Name="PK_user_Role_Access_Id" />
+    </Key>
+    <Property Name="PK_user_Role_Access_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_user_Role_Id" Type="Int32" />
+    <Property Name="FK_system_Part_Id" Type="Int32" />
+    <NavigationProperty Name="Role" Relationship="fitnessModel.FK_user_Role_Id" FromRole="User_Role_Access" ToRole="Role" />
+    <NavigationProperty Name="system_Component" Relationship="fitnessModel.FK_system_Part_Id" FromRole="User_Role_Access" ToRole="system_Component" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="PK_users_Id" />
+    </Key>
+    <Property Name="PK_users_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="users_FirstName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="users_LastName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="users_PhoneNumber" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="users_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="users_CreateUserTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="users_Status" Type="Byte" />
+    <Property Name="users_Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User_Auth" Relationship="fitnessModel.PK_FK_user_Auth_Id" FromRole="User" ToRole="User_Auth" />
+    <NavigationProperty Name="UsersInfoFitness" Relationship="fitnessModel.PK_FK_usersInfoFitness_Id" FromRole="User" ToRole="UsersInfoFitness" />
+  </EntityType>
+  <EntityType Name="UsersInfoFitness">
+    <Key>
+      <PropertyRef Name="PK_FK_usersInfoFitness_Id" />
+    </Key>
+    <Property Name="PK_FK_usersInfoFitness_Id" Type="Int32" Nullable="false" />
+    <Property Name="usersInfoFitness_Height" Type="Double" />
+    <Property Name="usersInfoFitness_Weight" Type="Double" />
+    <Property Name="usersInfoFitness_WaistMeasure" Type="Double" />
+    <Property Name="usersInfoFitness_StartDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="usersInfoFitness_EndDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="usersInfoFitness_BirthdayDate" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="usersInfoFitness_Age" Type="Int32" />
+    <Property Name="usersInfoFitness_MonthlyAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="usersInfoFitness_BMI" Type="Double" />
+    <Property Name="usersInfoFitness_BMR" Type="Double" />
+    <Property Name="usersInfoFitness_CreateUserTime" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="fitnessModel.PK_FK_usersInfoFitness_Id" FromRole="UsersInfoFitness" ToRole="User" />
+    <Property Name="usersInfoFitness_exerciesLevel" Type="Byte" />
+    <Property Name="usersInfoFitness_exerciesLevelStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VW_members">
+    <Key>
+      <PropertyRef Name="PK_users_Id" />
+    </Key>
+    <Property Name="PK_users_Id" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="users_PhoneNumber" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="users_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="users_CreateUserTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="users_Status" Type="Byte" />
+    <Property Name="users_Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="usersInfoFitness_Height" Type="Double" />
+    <Property Name="usersInfoFitness_Weight" Type="Double" />
+    <Property Name="usersInfoFitness_WaistMeasure" Type="Double" />
+    <Property Name="usersInfoFitness_StartDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="usersInfoFitness_EndDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="usersInfoFitness_BirthdayDate" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="usersInfoFitness_Age" Type="Int32" />
+    <Property Name="usersInfoFitness_MonthlyAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="usersInfoFitness_BMI" Type="Double" />
+    <Property Name="usersInfoFitness_BMR" Type="Double" />
+    <Property Name="usersInfoFitness_CreateUserTime" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="users_LastName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="users_FirstName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="usersInfoFitness_exerciesLevel" Type="Byte" />
+    <Property Name="usersInfoFitness_exerciesLevelStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_user_Auth_role_Id">
+    <End Type="fitnessModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="fitnessModel.User_Auth" Role="User_Auth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="PK_role_Id" />
+      </Principal>
+      <Dependent Role="User_Auth">
+        <PropertyRef Name="FK_user_Auth_role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_Role_Id">
+    <End Type="fitnessModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="fitnessModel.User_Role_Access" Role="User_Role_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="PK_role_Id" />
+      </Principal>
+      <Dependent Role="User_Role_Access">
+        <PropertyRef Name="FK_user_Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_system_Part_Id">
+    <End Type="fitnessModel.system_Component" Role="system_Component" Multiplicity="0..1" />
+    <End Type="fitnessModel.User_Role_Access" Role="User_Role_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="system_Component">
+        <PropertyRef Name="system_Component_Id" />
+      </Principal>
+      <Dependent Role="User_Role_Access">
+        <PropertyRef Name="FK_system_Part_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_FK_user_Auth_Id">
+    <End Type="fitnessModel.User" Role="User" Multiplicity="1" />
+    <End Type="fitnessModel.User_Auth" Role="User_Auth" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="PK_users_Id" />
+      </Principal>
+      <Dependent Role="User_Auth">
+        <PropertyRef Name="PK_FK_user_Auth_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_FK_usersInfoFitness_Id">
+    <End Type="fitnessModel.User" Role="User" Multiplicity="1" />
+    <End Type="fitnessModel.UsersInfoFitness" Role="UsersInfoFitness" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="PK_users_Id" />
+      </Principal>
+      <Dependent Role="UsersInfoFitness">
+        <PropertyRef Name="PK_FK_usersInfoFitness_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vw_AuthUsers">
+    <Key>
+      <PropertyRef Name="PK_users_Id" />
+    </Key>
+    <Property Name="PK_users_Id" Type="Int32" Nullable="false" />
+    <Property Name="user_Auth_UserName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="user_Auth_Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="user_Auth_PasswordHin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_Auth_Status" Type="Byte" />
+    <Property Name="user_Auth_CreateUserTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FK_user_Auth_role_Id" Type="Int32" />
+    <Property Name="users_FirstName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+    <Property Name="users_LastName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

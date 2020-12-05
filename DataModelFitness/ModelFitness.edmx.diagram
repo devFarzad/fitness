@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="188299ecfa5c4204a13799de903e2e81" Name="Diagram1" ZoomLevel="85" >
+        <EntityTypeShape EntityType="fitnessModel.Role" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="fitnessModel.system_Component" Width="1.5" PointX="0.75" PointY="13.5" />
+        <EntityTypeShape EntityType="fitnessModel.User_Auth" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="fitnessModel.User_Role_Access" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="fitnessModel.User" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="fitnessModel.UsersInfoFitness" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="fitnessModel.VW_members" Width="1.5" PointX="5.75" PointY="8.75" />
+        <AssociationConnector Association="fitnessModel.FK_user_Auth_role_Id" />
+        <AssociationConnector Association="fitnessModel.FK_user_Role_Id" />
+        <AssociationConnector Association="fitnessModel.FK_system_Part_Id" />
+        <AssociationConnector Association="fitnessModel.PK_FK_user_Auth_Id" />
+        <AssociationConnector Association="fitnessModel.PK_FK_usersInfoFitness_Id" />
+        <EntityTypeShape EntityType="fitnessModel.vw_AuthUsers" Width="2.375" PointX="5.375" PointY="1.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

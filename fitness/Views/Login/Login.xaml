@@ -1,0 +1,158 @@
+﻿<Window
+    x:Class="fitness.Views.Login.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:fitness.Views.Login"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:properties="clr-namespace:fitness.Properties"
+    Title="Login"
+    Width="400"
+    Height="600"
+    Loaded="Window_Loaded"
+    MouseDown="Window_MouseDown"
+    ResizeMode="CanMinimize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF0D83DD" MouseDown="Grid_MouseDown">
+        <StackPanel
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <Button
+                x:Name="Btn_Close"
+                Width="70"
+                Height="40"
+                Margin="10"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Click="Btn_Close_Click">
+                <materialDesign:PackIcon
+                    Width="35"
+                    Height="35"
+                    Kind="CloseCircle" />
+            </Button>
+        </StackPanel>
+        <StackPanel
+            Margin="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top">
+            <Button
+                x:Name="Btn_Setting_LoginPage"
+                Width="70"
+                Height="40"
+                Margin="10"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Click="Btn_Setting_LoginPage_Click">
+                <materialDesign:PackIcon
+                    Width="35"
+                    Height="35"
+                    Kind="Settings" />
+            </Button>
+        </StackPanel>
+        <StackPanel Margin="30">
+            <materialDesign:PackIcon
+                Width="96"
+                Height="96"
+                HorizontalAlignment="Center"
+                Foreground="LightGray"
+                Kind="FitnessCenter" />
+            <Border
+                x:Name="PanelMove"
+                Margin="10,20"
+                Background="White"
+                CornerRadius="5" Height="373">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="20"
+                        RenderingBias="Quality"
+                        ShadowDepth="1"
+                        Color="#FFA2A2A2" />
+                </Border.Effect>
+                <StackPanel x:Name="Pnl_Login" Margin="30">
+                    <!--<ComboBox
+                        x:Name="cmb_Lang"
+                        Margin="15"
+                        materialDesign:HintAssist.Hint="{x:Static properties:Resources.cmb_Lang}"
+                        SelectionChanged="cmb_Lang_SelectionChanged"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                        ToolTip="{x:Static properties:Resources.cmb_Lang}">
+                        <ComboBoxItem
+                            x:Name="kr"
+                            Content="{x:Static properties:Resources.kr}"
+                            IsEnabled="False" />
+                        <ComboBoxItem
+                            x:Name="ar"
+                            Content="{x:Static properties:Resources.ar}"
+                            IsEnabled="False" />
+                        <ComboBoxItem
+                            x:Name="en"
+                            Content="{x:Static properties:Resources.en}"
+                            IsEnabled="False" />
+                        <ComboBoxItem
+                            x:Name="fa"
+                            Content="{x:Static properties:Resources.fa}"
+                            IsEnabled="False" />
+                    </ComboBox>-->
+                    <TextBox
+                        x:Name="txt_UserName"
+                        Margin="15"
+                        materialDesign:HintAssist.Hint="{x:Static properties:Resources.txt_UserName}"
+                        CaretBrush="#FF0D83DD"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        TabIndex="0"
+                        ToolTip="{x:Static properties:Resources.txt_UserName}" />
+                    <PasswordBox
+                        x:Name="pw_Password"
+                        Margin="15"
+                        materialDesign:HintAssist.Hint="{x:Static properties:Resources.pw_Password}"
+                        CaretBrush="#FF0D83DD"
+                        Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                        TabIndex="1"
+                        ToolTip="{x:Static properties:Resources.pw_Password}" />
+                    <StackPanel HorizontalAlignment="center" Orientation="Horizontal">
+                        <Button
+                            x:Name="Btn_Login"
+                            Margin="15,50"
+                            VerticalAlignment="Center"
+                            Background="#FF0D83DD"
+                            BorderBrush="{x:Null}"
+                            Click="Btn_Login_Click"
+                            Content="{x:Static properties:Resources.Btn_Login}"
+                            Foreground="White"
+                            IsDefault="True"
+                            TabIndex="2" />
+
+
+                        <Button
+                            x:Name="Btn_Cancel"
+                            Margin="15,50"
+                            VerticalAlignment="Center"
+                            Background="#FF0D83DD"
+                            BorderBrush="{x:Null}"
+                            Click="Btn_Cancel_Click"
+                            Content="{x:Static properties:Resources.Btn_Cancel}"
+                            Foreground="White"
+                            IsCancel="True"
+                            TabIndex="3" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock
+                    Margin="0,2"
+                    HorizontalAlignment="Center"
+                    FontFamily="Lato"
+                    FontSize="18"
+                    Foreground="LightGray"
+                    Text="www.datacode.app" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+
+</Window>
