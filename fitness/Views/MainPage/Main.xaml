@@ -15,7 +15,7 @@
     MinHeight="830"
     MaxWidth="1200"
     MaxHeight="800"
-    Background="#FF0D83DD"
+    Background="#2d9cdb"
     Loaded="Window_Loaded"
     MouseDown="Window_MouseDown"
     ResizeMode="NoResize"
@@ -98,8 +98,8 @@
                                         Width="200"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.txt_Name}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
                                 <StackPanel Margin="0,-5,0,0" HorizontalAlignment="Center">
@@ -108,8 +108,8 @@
                                         Width="200"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.txt_Family}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
                                 <StackPanel Margin="0,-5,0,0" HorizontalAlignment="Center">
@@ -120,8 +120,8 @@
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.PhoneNumber}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
                                         AcceptsReturn="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         PreviewTextInput="txt_phoneNumber_PreviewTextInput"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
@@ -133,8 +133,8 @@
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.txt_Address}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
                                         AcceptsReturn="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
                                 <StackPanel Margin="0" HorizontalAlignment="Center" />
@@ -148,8 +148,8 @@
                                         Margin="0,-15,0,0"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.exerciesLevel}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                                         <ComboBoxItem>
                                             Level 1
@@ -176,8 +176,8 @@
                                         x:Name="date_Start"
                                         Width="200"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.StartDate}"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                                 </StackPanel>
                                 <StackPanel Margin="0,10,0,0" HorizontalAlignment="Center">
@@ -185,8 +185,8 @@
                                         x:Name="date_End"
                                         Width="200"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.EndDate}"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                                 </StackPanel>
 
@@ -200,8 +200,8 @@
                                         Width="200"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.height}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         PreviewTextInput="txt_Height_PreviewTextInput"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                         TextChanged="txt_Height_TextChanged" />
@@ -212,8 +212,8 @@
                                         Width="200"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.weight}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         PreviewTextInput="txt_Weight_PreviewTextInput"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                         TextChanged="txt_Weight_TextChanged" />
@@ -226,8 +226,8 @@
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.waistMeasure}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
                                         AcceptsReturn="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         PreviewTextInput="txt_waistMeasure_PreviewTextInput"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
@@ -239,8 +239,8 @@
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.age}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
                                         AcceptsReturn="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         PreviewTextInput="txt_Age_PreviewTextInput"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                         TextChanged="txt_Age_TextChanged" />
@@ -256,8 +256,8 @@
                                         Width="200"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.bmi}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         IsEnabled="False"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
@@ -267,8 +267,8 @@
                                         Width="200"
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.bmr}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         IsEnabled="False"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
@@ -280,8 +280,8 @@
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.monthlyAmount}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
                                         AcceptsReturn="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         PreviewTextInput="txt_MonthlyAmount_PreviewTextInput"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
@@ -293,8 +293,8 @@
                                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.Description}"
                                         materialDesign:TransitionAssist.DisableTransitions="True"
                                         AcceptsReturn="True"
-                                        BorderBrush="#FF0D83DD"
-                                        Foreground="#FF0D83DD"
+                                        BorderBrush="#FF2D9CDB"
+                                        Foreground="#FF2D9CDB"
                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                 </StackPanel>
                                 <StackPanel Margin="0" HorizontalAlignment="Center" />
@@ -311,7 +311,7 @@
                                 x:Name="Btn_New"
                                 Width="100"
                                 Margin="10"
-                                Background="#FF0D83DD"
+                                Background="#FF8CA3B1"
                                 BorderBrush="#FF717173"
                                 Click="Btn_New_Click"
                                 Content="{x:Static properties:Resources.Btn_New}"
@@ -320,7 +320,7 @@
                             <Button
                                 Width="100"
                                 Margin="10"
-                                Background="#FF0D83DD"
+                                Background="#FF8CA3B1"
                                 BorderBrush="#FF717173"
                                 Click="Button_Click"
                                 Content="{x:Static properties:Resources.Btn_Cancel}"
@@ -346,15 +346,15 @@
                                 x:Name="date_FromStart"
                                 Width="200"
                                 materialDesign:HintAssist.Hint="{x:Static properties:Resources.StartDate}"
-                                BorderBrush="#FF0D83DD"
-                                Foreground="#FF0D83DD"
+                                BorderBrush="#FF2E9BDA"
+                                Foreground="#FF2E9BDA"
                                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                         </StackPanel>
                         <StackPanel Margin="10,20,10,0" HorizontalAlignment="Center">
                             <TextBlock
                                 FontSize="18"
                                 FontWeight="Bold"
-                                Foreground="#FF0D83DD"
+                                Foreground="#FF2E9BDA"
                                 Text="To" />
                         </StackPanel>
                         <StackPanel Margin="0,0,30,0" HorizontalAlignment="Center">
@@ -362,8 +362,8 @@
                                 x:Name="date_ToStart"
                                 Width="200"
                                 materialDesign:HintAssist.Hint="{x:Static properties:Resources.StartDate}"
-                                BorderBrush="#FF0D83DD"
-                                Foreground="#FF0D83DD"
+                                BorderBrush="#FF2E9BDA"
+                                Foreground="#FF2E9BDA"
                                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                         </StackPanel>
                         <StackPanel Margin="0,18,0,0" HorizontalAlignment="Center">
@@ -372,21 +372,33 @@
                                 Width="200"
                                 materialDesign:HintAssist.Hint="{x:Static properties:Resources.fullName}"
                                 materialDesign:TransitionAssist.DisableTransitions="True"
-                                BorderBrush="#FF0D83DD"
-                                Foreground="#FF0D83DD" />
+                                BorderBrush="#FF2E9BDA"
+                                Foreground="#FF2E9BDA" />
                         </StackPanel>
 
                         <StackPanel Margin="10,10,0,0" HorizontalAlignment="Center">
                             <Button
                                 x:Name="Btn_Search"
-                                Width="100"
+                                Width="130"
                                 Margin="10"
-                                Background="#FF0D83DD"
+                                Background="#FF8CA3B1"
                                 BorderBrush="#FF717173"
                                 Click="Btn_Search_Click"
                                 Content="{x:Static properties:Resources.Btn_Search}"
                                 Style="{StaticResource MaterialDesignRaisedAccentButton}"
                                 ToolTip="{x:Static properties:Resources.Btn_Search}" />
+                        </StackPanel>
+                        <StackPanel Margin="10,10,0,0" HorizontalAlignment="Center">
+                            <Button
+                                x:Name="Btn_ShowDeactive"
+                                Width="130"
+                                Margin="10"
+                                Background="#FF8CA3B1"
+                                BorderBrush="#FF717173"
+                                Click="Btn_ShowDeactive_Click"
+                                Content="{x:Static properties:Resources.deactiveUsers}"
+                                Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                                ToolTip="{x:Static properties:Resources.deactiveUsers}" />
                         </StackPanel>
                     </StackPanel>
 
@@ -429,9 +441,9 @@
                         BorderBrush="#FF0D83DD"
                         ColumnHeaderHeight="40"
                         FlowDirection="LeftToRight"
-                        Foreground="#FF0D83DD"
+                        Foreground="#8ca3b1"
                         GridLinesVisibility="Horizontal"
-                        HorizontalGridLinesBrush="#FFABDBFF"
+                        HorizontalGridLinesBrush="#2e9bda"
                         IsReadOnly="True"
                         RowHeight="45"
                         VerticalGridLinesBrush="{x:Null}">
@@ -808,7 +820,7 @@
                                     Cursor="Hand"
                                     FontSize="18"
                                     FontWeight="Bold"
-                                    Foreground="#FF0D83DD"
+                                    Foreground="#FF2E9BDA"
                                     MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"
                                     Text="All Expired Accounts " />
 
@@ -821,7 +833,7 @@
                                     materialDesign:HintAssist.Hint="Search Invoice"
                                     FontSize="18"
                                     FontWeight="Bold"
-                                    Foreground="#FF0D83DD"
+                                    Foreground="#FF2E9BDA"
                                     Text="0"
                                     ToolTip="{x:Static properties:Resources.Btn_Close}" />
 
@@ -837,7 +849,7 @@
                                     materialDesign:HintAssist.Hint="Search Invoice"
                                     FontSize="18"
                                     FontWeight="Bold"
-                                    Foreground="#FF0D83DD"
+                                    Foreground="#FF2E9BDA"
                                     Text="Total MontlyAmount " />
 
                                 <TextBlock
@@ -849,7 +861,7 @@
                                     materialDesign:HintAssist.Hint="Search Invoice"
                                     FontSize="18"
                                     FontWeight="Bold"
-                                    Foreground="#FF0D83DD"
+                                    Foreground="#FF2E9BDA"
                                     Text="0"
                                     ToolTip="{x:Static properties:Resources.Btn_Close}" />
 

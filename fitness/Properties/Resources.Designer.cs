@@ -754,6 +754,15 @@ namespace fitness.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deactive Users.
+        /// </summary>
+        public static string deactiveUsers {
+            get {
+                return ResourceManager.GetString("deactiveUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Debt Companies.
         /// </summary>
         public static string debtCompanies {

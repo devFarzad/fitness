@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Farzad\Projects\C#AndSql\Fitness\fitness\fitness\App.xaml
-4-552214020
+61385071674
 
-121593511350
+141439871867
 20-1795463163
-MainWindow.xaml;Views\Login\Login.xaml;Views\MainPage\Main.xaml;Views\ManageConnectionString\SettingsDB.xaml;
+MainWindow.xaml;Views\DeactiveUsers\ShowDeactiveUsers.xaml;Views\Login\Login.xaml;Views\MainPage\Main.xaml;Views\ManageConnectionString\SettingsDB.xaml;Views\Settings\PublicSettings.xaml;
 
 True
 

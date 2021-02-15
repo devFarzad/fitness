@@ -1,0 +1,352 @@
+﻿<Window
+    x:Class="fitness.Views.DeactiveUsers.ShowDeactiveUsers"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:local="clr-namespace:fitness.Views.DeactiveUsers"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:properties="clr-namespace:fitness.Properties"
+    Title="{x:Static properties:Resources.title_UsersList}"
+    Height="684"
+    MinWidth="1000"
+    MinHeight="680"
+    MaxWidth="1000"
+    MaxHeight="780"
+    d:DesignWidth="700"
+    Background="#2e9bda"
+    Loaded="Window_Loaded"
+    MouseDown="Window_MouseDown"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <Grid Height="684" VerticalAlignment="Top">
+        <StackPanel
+            Height="60"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <Button
+                x:Name="btn_Icon_Close"
+                Width="70"
+                Height="40"
+                Margin="10"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Click="btn_Icon_Close_Click">
+                <materialDesign:PackIcon
+                    Width="32"
+                    Height="32"
+                    Kind="CloseCircle"
+                    RenderTransformOrigin="-0.057,-0.086" />
+            </Button>
+        </StackPanel>
+        <StackPanel
+            Height="60"
+            Margin="114,0,129,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+            <Label
+                x:Name="title_windows"
+                Height="31"
+                Margin="120,20,116,0"
+                Content="{x:Static properties:Resources.deactiveUsers}"
+                FontFamily="Captura Demo"
+                FontSize="18"
+                Foreground="LightGray" />
+        </StackPanel>
+        <!--<StackPanel
+            Width="56"
+            Margin="0,55,30,539"
+            HorizontalAlignment="right"
+            Panel.ZIndex="1">
+            <Button
+                x:Name="btn_AddUser"
+                Width="44"
+                Height="44"
+                Margin="10,0,0,0"
+                HorizontalAlignment="Left"
+                Background="#FF0D83DD"
+                BorderBrush="#FFB8B8B8"
+                Click="btn_AddUser_Click"
+                Cursor="Hand"
+                Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                ToolTip="{x:Static properties:Resources.btn_Popup_AddUser}">
+                <materialDesign:PackIcon
+                    Width="30"
+                    Height="30"
+                    Foreground="White"
+                    Kind="UserAdd" />
+            </Button>
+        </StackPanel>-->
+        <Border
+            x:Name="pnl_Search"
+            MouseLeftButtonDown="pnl_Search_MouseLeftButtonDown"
+            Width="945"
+            Height="109"
+            Margin="27,80,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="WhiteSmoke"
+            CornerRadius="10"
+            RenderTransformOrigin="0.51,0.167">
+            <StackPanel Margin="8,0,7,10" HorizontalAlignment="Center">
+                <StackPanel Margin="0,20,0,0" Orientation="Horizontal">
+                    <StackPanel Margin="0,0,0,0" HorizontalAlignment="Center">
+                        <DatePicker
+                            x:Name="date_FromStart"
+                            Width="200"
+                            materialDesign:HintAssist.Hint="{x:Static properties:Resources.StartDate}"
+                            BorderBrush="#FF2D9CDB"
+                            Foreground="#FF2D9CDB"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                    </StackPanel>
+                    <StackPanel Margin="10,20,10,0" HorizontalAlignment="Center">
+                        <TextBlock
+                            FontSize="18"
+                            FontWeight="Bold"
+                            Foreground="#FF2E9BDA"
+                            Text="To" />
+                    </StackPanel>
+                    <StackPanel Margin="0,0,30,0" HorizontalAlignment="Center">
+                        <DatePicker
+                            x:Name="date_ToStart"
+                            Width="200"
+                            materialDesign:HintAssist.Hint="{x:Static properties:Resources.StartDate}"
+                            BorderBrush="#FF2D9CDB"
+                            Foreground="#FF2D9CDB"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                    </StackPanel>
+                    <StackPanel Margin="0,18,0,0" HorizontalAlignment="Center">
+                        <TextBox
+                            x:Name="txt_SearchSubscribeFullName"
+                            Width="200"
+                            materialDesign:HintAssist.Hint="{x:Static properties:Resources.fullName}"
+                            materialDesign:TransitionAssist.DisableTransitions="True"
+                            BorderBrush="#FF2D9CDB"
+                            Foreground="#FF2D9CDB" />
+                    </StackPanel>
+
+                    <StackPanel Margin="10,10,0,0" HorizontalAlignment="Center">
+                        <Button
+                            x:Name="Btn_Search"
+                            Width="100"
+                            Margin="10"
+                            Background="#FF8CA3B1"
+                            BorderBrush="#FF717173"
+                            Click="Btn_Search_Click"
+                            Content="{x:Static properties:Resources.Btn_Search}"
+                            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                            ToolTip="{x:Static properties:Resources.Btn_Search}" />
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+        <Border
+            x:Name="PanelDeactiveList"
+            Width="945"
+            Height="438"
+            Margin="27,0,0,32"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="White"
+            CornerRadius="10"
+            MouseLeftButtonDown="PanelDeactiveList_MouseLeftButtonDown">
+            <StackPanel HorizontalAlignment="Stretch">
+
+                <StackPanel x:Name="Pnl_Users" VerticalAlignment="Top">
+
+                    <DataGrid
+                        x:Name="DataGrid_Members"
+                        Width="925"
+                        Height="363"
+                        Margin="10,10,0,10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        AutoGenerateColumns="False"
+                        BorderBrush="#2e9bda"
+                        ColumnHeaderHeight="40"
+                        FlowDirection="LeftToRight"
+                        Foreground="#8ca3b1"
+                        GridLinesVisibility="Horizontal"
+                        HorizontalGridLinesBrush="#8ca3b1"
+                        IsReadOnly="True"
+                        RowHeight="45"
+                        VerticalGridLinesBrush="{x:Null}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="70"
+                                Binding="{Binding PK_users_Id}"
+                                Header="{x:Static properties:Resources.Id}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Foreground" Value="#FF0D83DD" />
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn
+                                Width="160"
+                                Binding="{Binding FullName}"
+                                Header="{x:Static properties:Resources.fullName}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Foreground" Value="#FF0D83DD" />
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn
+                                Width="150"
+                                Binding="{Binding usersInfoFitness_StartDate}"
+                                Header="{x:Static properties:Resources.StartDate}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Foreground" Value="#FF0D83DD" />
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn
+                                Width="150"
+                                Binding="{Binding usersInfoFitness_EndDate}"
+                                Header="{x:Static properties:Resources.EndDate}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Foreground" Value="#FF0D83DD" />
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn
+                                Width="110"
+                                Binding="{Binding usersInfoFitness_exerciesLevelStr}"
+                                Header="{x:Static properties:Resources.exerciesLevel}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Foreground" Value="#FF0D83DD" />
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="Active">
+                                                <Setter Property="Foreground" Value="Green" />
+                                            </Trigger>
+                                            <Trigger Property="Text" Value="Deactive">
+                                                <Setter Property="Foreground" Value="Red" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <!--<DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button
+                                            x:Name="btn_Edit"
+                                            Width="auto"
+                                            Height="auto"
+                                            Click="btn_Edit_Click"
+                                            Style="{StaticResource MaterialDesignFlatButton}"
+                                            ToolTip="{x:Static properties:Resources.Edited}">
+                                            <materialDesign:PackIcon
+                                                Width="15"
+                                                Height="15"
+                                                Foreground="DarkOrange"
+                                                Kind="Edit" />
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>-->
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button
+                                            x:Name="btn_Delete"
+                                            Width="auto"
+                                            Height="auto"
+                                            Click="btn_Delete_Click"
+                                            Style="{StaticResource MaterialDesignFlatButton}"
+                                            ToolTip="{x:Static properties:Resources.Deleted}">
+                                            <materialDesign:PackIcon
+                                                Width="15"
+                                                Height="15"
+                                                Foreground="Red"
+                                                Kind="Delete" />
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button
+                                            x:Name="btn_AactiveMember"
+                                            Width="auto"
+                                            Height="auto"
+                                            Click="btn_AactiveMember_Click"
+                                            Style="{StaticResource MaterialDesignFlatButton}"
+                                            ToolTip="{x:Static properties:Resources.UsersActive}">
+                                            <materialDesign:PackIcon
+                                                Width="15"
+                                                Height="15"
+                                                Foreground="Green"
+                                                Kind="Tick" />
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Button
+                            x:Name="Btn_Close"
+                            Width="150"
+                            Margin="15,10"
+                            VerticalAlignment="Center"
+                            Background="#FF8CA3B1"
+                            BorderBrush="{x:Null}"
+                            Click="Btn_Close_Click"
+                            Content="{x:Static properties:Resources.Btn_Close}"
+                            Foreground="White" />
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+
+</Window>

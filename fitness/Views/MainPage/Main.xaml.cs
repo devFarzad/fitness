@@ -1,5 +1,6 @@
 ﻿using DataModelFitness;
 using fitness.Model;
+using fitness.Views.DeactiveUsers;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -683,6 +684,29 @@ namespace fitness.Views.MainPage
         {
             Regex regex = new Regex("^[.][0-9]+$|^[0-9]*[.]{0,1}[0-9]*$");
             e.Handled = !regex.IsMatch((sender as TextBox).Text.Insert((sender as TextBox).SelectionStart, e.Text));
+        }
+
+        private void Btn_ShowDeactive_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ShowDeactiveUsers ShowAllDeactiveUsers = new ShowDeactiveUsers
+                {
+
+                };
+                ShowAllDeactiveUsers.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : \n\n\n " + ex.ToString());
+            }
+            finally
+            {
+                this.StatusSearch = 1; //Normal Search
+                LoadMembersData(GenerateSearchKey);
+                LoadExpireMembers();
+            }
+
         }
     }
 }

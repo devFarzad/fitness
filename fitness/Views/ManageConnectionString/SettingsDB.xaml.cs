@@ -18,7 +18,7 @@ namespace fitness.Views.ManageConnectionString
         RegisterData registry = new RegisterData();
         private void Btn_Cancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
         private void DirectionLanguages()
         {

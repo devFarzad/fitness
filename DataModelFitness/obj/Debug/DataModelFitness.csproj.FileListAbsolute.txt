@@ -8,4 +8,3 @@ C:\Users\Farzad\Projects\C#AndSql\Fitness\fitness\DataModelFitness\bin\Debug\Ent
 C:\Users\Farzad\Projects\C#AndSql\Fitness\fitness\DataModelFitness\obj\Debug\DataModelFitness.csproj.CopyComplete
 C:\Users\Farzad\Projects\C#AndSql\Fitness\fitness\DataModelFitness\obj\Debug\DataModelFitness.dll
 C:\Users\Farzad\Projects\C#AndSql\Fitness\fitness\DataModelFitness\obj\Debug\DataModelFitness.pdb
-C:\Users\Farzad\Projects\C#AndSql\Fitness\fitness\DataModelFitness\obj\Debug\DataModelFitness.csprojAssemblyReference.cache

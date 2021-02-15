@@ -19,7 +19,7 @@
     WindowStyle="None"
     mc:Ignorable="d">
 
-    <Grid Background="#FF0D83DD" MouseDown="Grid_MouseDown">
+    <Grid Background="#2e9bda" MouseDown="Grid_MouseDown">
         <StackPanel
             Margin="10"
             HorizontalAlignment="Left"
@@ -51,7 +51,8 @@
         <StackPanel
             Margin="10"
             HorizontalAlignment="Right"
-            VerticalAlignment="Top">
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
             <Button
                 x:Name="Btn_License"
                 Width="70"
@@ -86,28 +87,36 @@
                         x:Name="txt_ServerName"
                         Margin="15"
                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.txt_ServerName}"
+                        BorderBrush="#FF2D9CDB"
                         CaretBrush="#FF0D83DD"
+                        Foreground="#FF2D9CDB"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         ToolTip="{x:Static properties:Resources.txt_ServerName}" />
                     <TextBox
                         x:Name="txt_DBName"
                         Margin="15"
                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.txt_DBName}"
+                        BorderBrush="#FF2D9CDB"
                         CaretBrush="#FF0D83DD"
+                        Foreground="#FF2D9CDB"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         ToolTip="{x:Static properties:Resources.txt_DBName}" />
                     <TextBox
                         x:Name="txt_UserName"
                         Margin="15"
                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.txt_UserName}"
+                        BorderBrush="#FF2D9CDB"
                         CaretBrush="#FF0D83DD"
+                        Foreground="#FF2D9CDB"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         ToolTip="{x:Static properties:Resources.txt_UserName}" />
                     <PasswordBox
                         x:Name="pw_Password"
                         Margin="15"
                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.pw_Password}"
+                        BorderBrush="#FF2D9CDB"
                         CaretBrush="#FF0D83DD"
+                        Foreground="#FF2D9CDB"
                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                         ToolTip="{x:Static properties:Resources.pw_Password}" />
                     <StackPanel
@@ -118,7 +127,7 @@
                             x:Name="Btn_Save_DBSetting"
                             Width="120"
                             VerticalAlignment="Center"
-                            Background="#FF0D83DD"
+                            Background="#FF8CA3B1"
                             BorderBrush="{x:Null}"
                             Click="Btn_Save_DBSetting_Click"
                             Content="{x:Static properties:Resources.Btn_Save_DBSetting}"
@@ -127,7 +136,7 @@
                             x:Name="Btn_Cancel"
                             Width="120"
                             VerticalAlignment="Center"
-                            Background="#FF0D83DD"
+                            Background="#FF8CA3B1"
                             BorderBrush="{x:Null}"
                             Click="Btn_Cancel_Click"
                             Content="{x:Static properties:Resources.Btn_Cancel}"

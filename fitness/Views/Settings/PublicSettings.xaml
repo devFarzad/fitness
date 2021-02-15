@@ -1,0 +1,301 @@
+﻿<Window
+    x:Class="fitness.Views.Settings.PublicSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:fitness.Views.Settings"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:properties="clr-namespace:fitness.Properties"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    Title="{x:Static properties:Resources.Settings}"
+    Width="618"
+    Height="500"
+    MinWidth="550"
+    MinHeight="500"
+    MaxWidth="618"
+    MaxHeight="500"
+    Background="#FF0D83DD"
+    Loaded="Window_Loaded"
+    MouseDown="Window_MouseDown"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <Grid
+        Width="597"
+        Height="490"
+        Margin="0,10,0,0"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button
+                x:Name="btn_Icon_Close"
+                Width="70"
+                Height="40"
+                Margin="10"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Click="btn_Icon_Close_Click">
+                <materialDesign:PackIcon
+                    Width="32"
+                    Height="32"
+                    Kind="CloseCircle"
+                    RenderTransformOrigin="-0.057,-0.086" />
+            </Button>
+        </StackPanel>
+        <Border
+            Width="552"
+            Height="332"
+            Margin="30,116,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="White"
+            CornerRadius="10"
+            TextBlock.Foreground="#FF0D83DD">
+            <Border.Effect>
+                <DropShadowEffect Color="#FF9C9B9B" />
+            </Border.Effect>
+            <StackPanel
+                x:Name="Pnl_Settings"
+                Height="391"
+                Margin="0,-21,0,-38"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top">
+                <Border
+                    Width="130"
+                    Height="130"
+                    Margin="20,-70,20,10"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    CornerRadius="100">
+                    <Border.Background>
+                        <ImageBrush x:Name="imageBrush" ImageSource="DataCode.png" />
+                    </Border.Background>
+                </Border>
+
+                <StackPanel Margin="0,0,0,0">
+                    <TextBlock
+                        x:Name="txt_ShowSettings"
+                        Margin="10"
+                        HorizontalAlignment="Center"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Foreground="#FF0D83DD"
+                        Text="{x:Static properties:Resources.Settings}" />
+                </StackPanel>
+                <StackPanel Margin="20,0" HorizontalAlignment="Center">
+                    <!--<StackPanel Orientation="Horizontal">
+                        <StackPanel x:Name="pnl_Backup" Width="100">
+                            <Button
+                                x:Name="Btn_Backup"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Click="Btn_Backup_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.Backup}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="Backup" />
+                            </Button>
+                            <TextBlock
+                                x:Name="txt_LblBackup"
+                                Margin="15,5"
+                                Text="{x:Static properties:Resources.Backup}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel x:Name="Pnl_Languages" Width="100">
+                            <Button
+                                x:Name="btn_SelectLanguage"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Click="btn_SelectLanguage_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.languages}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="Language" />
+                            </Button>
+                            <TextBlock
+                                x:Name="txt_LblSelectLanguage"
+                                Margin="10,5"
+                                Text="{x:Static properties:Resources.languages}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel x:Name="Pnl_DollarRate" Width="100">
+                            <Button
+                                x:Name="btn_DollarRateSettings"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Click="btn_DollarRateSettings_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.title_DollarRate}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="Dollar" />
+                            </Button>
+                            <TextBlock
+                                x:Name="txt_LblDollarRate"
+                                Margin="10,5"
+                                Text="{x:Static properties:Resources.title_DollarRate}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel x:Name="Pnl_Cashier" Width="100">
+                            <Button
+                                x:Name="btn_CashierSettings"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Click="btn_CashierSettings_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.Cashier}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="Cash" />
+                            </Button>
+                            <TextBlock
+                                x:Name="txt_LblCashier"
+                                Margin="10,5"
+                                Text="{x:Static properties:Resources.Cashier}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                    </StackPanel>-->
+                </StackPanel>
+                <StackPanel Margin="20,0" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel
+                            x:Name="Pnl_SmsSettings"
+                            Width="100"
+                            Visibility="Collapsed">
+                            <Button
+                                x:Name="btn_SMS"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.SMS}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="Sms" />
+                            </Button>
+                            <TextBlock
+                                Margin="10,5"
+                                Text="{x:Static properties:Resources.SMS}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel
+                            x:Name="Pnl_LogoSettings"
+                            Width="100"
+                            Visibility="Collapsed">
+                            <Button
+                                x:Name="btn_SetLogo"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.Logo}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="Image" />
+                            </Button>
+                            <TextBlock
+                                x:Name="txt_LblSetLogo"
+                                Margin="10,5"
+                                Text="{x:Static properties:Resources.Logo}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Width="100">
+                            <Button
+                                x:Name="btn_ChangePassword"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Click="btn_ChangePassword_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.conectToInternt}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="FormTextboxPassword" />
+                            </Button>
+                            <TextBlock
+                                Margin="0,5"
+                                Text="{x:Static properties:Resources.txt_LblChangePassword}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Width="100">
+                            <Button
+                                x:Name="btn_NewUser"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Click="btn_NewUser_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.Btn_CreateUser}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="UserAdd" />
+                            </Button>
+                            <TextBlock
+                                Margin="0,5"
+                                Text="{x:Static properties:Resources.Btn_CreateUser}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Width="100">
+                            <Button
+                                x:Name="btn_DBSettings"
+                                Margin="10"
+                                Background="#FF0D83DD"
+                                BorderBrush="White"
+                                Click="btn_DBSettings_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                ToolTip="{x:Static properties:Resources.title_DollarRate}">
+                                <materialDesign:PackIcon
+                                    Width="40"
+                                    Height="40"
+                                    Kind="Database" />
+                            </Button>
+                            <TextBlock
+                                Margin="0,5"
+                                Text="{x:Static properties:Resources.txt_TitleSetingDB}"
+                                TextAlignment="Center" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <Grid
+                    Margin="20,70"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="299*" />
+                        <ColumnDefinition Width="121*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        x:Name="btn_Close"
+                        Grid.Column="1"
+                        Width="100"
+                        HorizontalAlignment="Right"
+                        Background="#FF0D83DD"
+                        BorderBrush="DarkGray"
+                        Click="btn_Close_Click"
+                        Content="{x:Static properties:Resources.Btn_Close}"
+                        ToolTip="{x:Static properties:Resources.Btn_Close}" />
+                </Grid>
+            </StackPanel>
+        </Border>
+        <StackPanel Margin="15" HorizontalAlignment="Left" />
+    </Grid>
+
+</Window>

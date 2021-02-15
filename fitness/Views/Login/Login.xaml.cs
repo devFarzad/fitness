@@ -173,6 +173,7 @@ namespace fitness.Views.Login
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            txt_UserName.Focus();
             LoadData();
         }
     }

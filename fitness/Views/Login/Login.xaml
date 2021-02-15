@@ -9,7 +9,7 @@
     xmlns:properties="clr-namespace:fitness.Properties"
     Title="Login"
     Width="400"
-    Height="600"
+    Height="505.5"
     Loaded="Window_Loaded"
     MouseDown="Window_MouseDown"
     ResizeMode="CanMinimize"
@@ -17,7 +17,7 @@
     WindowStyle="None"
     mc:Ignorable="d">
 
-    <Grid Background="#FF0D83DD" MouseDown="Grid_MouseDown">
+    <Grid Background="#2e9bda" MouseDown="Grid_MouseDown">
         <StackPanel
             Margin="10"
             HorizontalAlignment="Left"
@@ -54,18 +54,20 @@
                     Kind="Settings" />
             </Button>
         </StackPanel>
-        <StackPanel Margin="30">
+        <StackPanel Margin="30,30,30,10">
             <materialDesign:PackIcon
                 Width="96"
-                Height="96"
+                Height="76"
+                Margin="122,0"
                 HorizontalAlignment="Center"
                 Foreground="LightGray"
                 Kind="FitnessCenter" />
             <Border
                 x:Name="PanelMove"
+                Height="306"
                 Margin="10,20"
                 Background="White"
-                CornerRadius="5" Height="373">
+                CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
                         BlurRadius="20"
@@ -102,7 +104,9 @@
                         x:Name="txt_UserName"
                         Margin="15"
                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.txt_UserName}"
+                        BorderBrush="#FF2D9CDB"
                         CaretBrush="#FF0D83DD"
+                        Foreground="#FF2D9CDB"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         TabIndex="0"
                         ToolTip="{x:Static properties:Resources.txt_UserName}" />
@@ -110,16 +114,22 @@
                         x:Name="pw_Password"
                         Margin="15"
                         materialDesign:HintAssist.Hint="{x:Static properties:Resources.pw_Password}"
+                        BorderBrush="#FF2D9CDB"
                         CaretBrush="#FF0D83DD"
+                        Foreground="#FF2D9CDB"
                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                         TabIndex="1"
                         ToolTip="{x:Static properties:Resources.pw_Password}" />
-                    <StackPanel HorizontalAlignment="center" Orientation="Horizontal">
+                    <StackPanel
+                        Margin="0,20,0,0"
+                        HorizontalAlignment="center"
+                        Orientation="Horizontal">
                         <Button
                             x:Name="Btn_Login"
-                            Margin="15,50"
+                            Width="110"
+                            Margin="10,20"
                             VerticalAlignment="Center"
-                            Background="#FF0D83DD"
+                            Background="#8ca3b1"
                             BorderBrush="{x:Null}"
                             Click="Btn_Login_Click"
                             Content="{x:Static properties:Resources.Btn_Login}"
@@ -130,9 +140,10 @@
 
                         <Button
                             x:Name="Btn_Cancel"
-                            Margin="15,50"
+                            Width="110"
+                            Margin="10,20"
                             VerticalAlignment="Center"
-                            Background="#FF0D83DD"
+                            Background="#8ca3b1"
                             BorderBrush="{x:Null}"
                             Click="Btn_Cancel_Click"
                             Content="{x:Static properties:Resources.Btn_Cancel}"
@@ -142,15 +153,7 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-            <StackPanel HorizontalAlignment="Center">
-                <TextBlock
-                    Margin="0,2"
-                    HorizontalAlignment="Center"
-                    FontFamily="Lato"
-                    FontSize="18"
-                    Foreground="LightGray"
-                    Text="www.datacode.app" />
-            </StackPanel>
+            
         </StackPanel>
     </Grid>
 

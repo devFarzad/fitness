@@ -348,6 +348,9 @@
   <data name="DateSale" xml:space="preserve">
     <value>Date Sale</value>
   </data>
+  <data name="deactiveUsers" xml:space="preserve">
+    <value>Deactive Users</value>
+  </data>
   <data name="debtCompanies" xml:space="preserve">
     <value>Debt Companies</value>
   </data>
